@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarieGold", "MarieGold\MarieGold.csproj", "{979E741E-113A-4CAF-89FD-D164D2CBC6CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarieGold.WebAPI", "MarieGold.WebAPI\MarieGold.WebAPI.csproj", "{7844E635-2190-46C7-8A23-F6372789CF8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarieGold.SandBox", "MarieGold.SandBox\MarieGold.SandBox.csproj", "{95AD8DF6-BBE8-4794-925E-DB061178665B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{979E741E-113A-4CAF-89FD-D164D2CBC6CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{979E741E-113A-4CAF-89FD-D164D2CBC6CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{979E741E-113A-4CAF-89FD-D164D2CBC6CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7844E635-2190-46C7-8A23-F6372789CF8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7844E635-2190-46C7-8A23-F6372789CF8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7844E635-2190-46C7-8A23-F6372789CF8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7844E635-2190-46C7-8A23-F6372789CF8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95AD8DF6-BBE8-4794-925E-DB061178665B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95AD8DF6-BBE8-4794-925E-DB061178665B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95AD8DF6-BBE8-4794-925E-DB061178665B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95AD8DF6-BBE8-4794-925E-DB061178665B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
