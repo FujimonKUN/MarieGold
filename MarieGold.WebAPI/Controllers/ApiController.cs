@@ -14,18 +14,6 @@ namespace MarieGold.WebAPI.Controllers {
         private static readonly List<string> Tokens = new() {"e7da2aff-67d8-4142-bde3-1803452b6389"};
         private static bool IsMatchedToken(string token) => Tokens.Contains(token);
 
-        /*[HttpGet]
-        [Route("get/token")]
-        public ActionResult GetToken() {
-            var token = Guid.NewGuid().ToString();
-
-            Tokens.Add(token);
-            return new JsonResult(new {
-                Status = 200,
-                Token = token
-            });
-        }*/
-
         [HttpPost]
         [Route("post")]
         public async Task<ActionResult> Post(string token) {
@@ -43,7 +31,6 @@ namespace MarieGold.WebAPI.Controllers {
             }
 
             if (Request.ContentType != null && Request.ContentType.StartsWith("image")) {
-                Console.WriteLine(Request.ContentType);
                 await using (var body = Request.Body) {
                     await using (var output = System.IO.File.Create("AA.jpg")) {
                         var buffer = new byte[32 * 1024];
@@ -70,7 +57,7 @@ namespace MarieGold.WebAPI.Controllers {
 
         [HttpDelete]
         [Route("delete")]
-        public ActionResult Delete(string token) {
+        public async Task<ActionResult> Delete(string token) {
             return Ok();
         }
     }

@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarieGold.WebAPI", "MarieGo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarieGold.SandBox", "MarieGold.SandBox\MarieGold.SandBox.csproj", "{95AD8DF6-BBE8-4794-925E-DB061178665B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarieGold.WebAPI.SandBox", "MarieGold.WebAPI.SandBox\MarieGold.WebAPI.SandBox.csproj", "{AAF78CBD-61C9-4355-997D-111FD60B3853}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarieGold.SandBox.SQLite", "MarieGold.SandBox.SQLite\MarieGold.SandBox.SQLite.csproj", "{B21853AB-EE29-403D-B969-353BB8DB24AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{95AD8DF6-BBE8-4794-925E-DB061178665B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95AD8DF6-BBE8-4794-925E-DB061178665B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95AD8DF6-BBE8-4794-925E-DB061178665B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAF78CBD-61C9-4355-997D-111FD60B3853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAF78CBD-61C9-4355-997D-111FD60B3853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAF78CBD-61C9-4355-997D-111FD60B3853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAF78CBD-61C9-4355-997D-111FD60B3853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B21853AB-EE29-403D-B969-353BB8DB24AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B21853AB-EE29-403D-B969-353BB8DB24AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B21853AB-EE29-403D-B969-353BB8DB24AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B21853AB-EE29-403D-B969-353BB8DB24AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

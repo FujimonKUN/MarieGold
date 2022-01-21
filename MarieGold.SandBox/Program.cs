@@ -1,25 +1,50 @@
 ﻿using System;
-using System.IO;
-using System.Net.Http;
-using System.Net.Http.Headers;
+using System.Data;
+using System.Linq;
+using Microsoft.Data.Sqlite;
 
 namespace MarieGold.SandBox {
     class Program {
         static void Main(string[] args) {
-            Console.WriteLine("Hello World!");
-            var token = "e7da2aff-67d8-4142-bde3-1803452b6389";
+            using (var sqlite = new SqliteConnection("Data Source=:memory:")) {
+                sqlite.Open();
 
-            var client = new HttpClient();
-            var request = new HttpRequestMessage(HttpMethod.Post, $"https://localhost:5001/api/post?token={token}") {
-                Content = new ByteArrayContent(File.ReadAllBytes("horror.jpeg"))
-            };
-            request.Content.Headers.ContentType = new MediaTypeHeaderValue("image/jpeg");
+                using (var command = new SqliteCommand()) {
+                    command.Connection = sqlite;
 
-            var response = client.Send(request);
+                    command.CommandText =
+                        "CREATE TABLE MARIEGOLD(ID INTEGER PRIMARY KEY AUTOINCREMENT, FILENAME TEXT, BASE64 TEXT)";
+                    command.ExecuteNonQuery();
 
-            Console.WriteLine(response.ToString());
-            Console.WriteLine(response.RequestMessage?.ToString());
-            Console.WriteLine(response.Content.ReadAsStringAsync().Result);
+                    command.Transaction = sqlite.BeginTransaction();
+                    foreach (var i in Enumerable.Range(0, 114514)) {
+                        command.CommandText = "INSERT INTO MARIEGOLD(FILENAME, BASE64) VALUES(@FILENAME, @BASE64)";
+
+                        command.Parameters.AddWithValue("@FILENAME", $"OMAE NO KAWARAI_{i}");
+                        command.Parameters.AddWithValue("@BASE64", "HEY GUYS");
+
+                        command.ExecuteNonQuery();
+
+                        command.Parameters.Clear();
+                    }
+
+                    command.Transaction?.Commit();
+                }
+
+                using (var command = new SqliteCommand()) {
+                    command.Connection = sqlite;
+                    command.CommandText = "SELECT * FROM MARIEGOLD WHERE ID >= 10";
+
+                    var dt = new DataTable();
+                    using (var reader = command.ExecuteReader()) {
+                        dt.Load(reader);
+                    }
+
+                    foreach (var data in dt.Select()) {
+                        Console.WriteLine($"ID: {data["ID"]} - Filename: {data["FILENAME"]}");
+                    }
+                }
+            }
         }
     }
 }
